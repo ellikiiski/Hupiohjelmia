@@ -23,7 +23,7 @@ public class FindingElli {
     public static void printElliWords(ArrayList<String> words) {
         int total = 0;
         for (String word : words) {
-            if (word.toLowerCase().contains("ille")) {
+            if (word.toLowerCase().contains("elli")) {
                 System.out.println(word);
                 total++;
             }
