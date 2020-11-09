@@ -1,3 +1,3 @@
 ## Apuohjelmia
 
-Jotain hupiohjelmia, joista olevinaan on joskus ollut jotain apua erilaisten tehtävien tekemisessä.
+Hupiohjelmia, jotka ovat olleet enemmän tai vähemmän avuliaita erilaisten enemmän tai vähemmän tärkeiden tehtävien tekemisessä.
