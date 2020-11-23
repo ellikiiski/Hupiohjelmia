@@ -14,6 +14,18 @@ public class Fraction{
         return numerator == 0;
     }
     
+    public boolean isOne() {
+        return numerator == nominator;
+    }
+    
+    public String signOfNumber() {
+        sievenna();
+        if (nominator < 0) {
+            return "-";
+        }
+        return "+";
+    }
+    
     public Fraction inverse() {
         return new Fraction(nominator, numerator);
     }
