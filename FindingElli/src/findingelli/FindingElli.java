@@ -15,7 +15,7 @@ public class FindingElli {
     public static void main(String[] args) {
         
         FinnishWordList sanat = new FinnishWordList("./files/kotus-sanalista.xml");
-        ArrayList<String> sanatText = sanat.getLista();
+        ArrayList<String> sanatText = sanat.getList();
         
         printElliWords(sanatText);
     }

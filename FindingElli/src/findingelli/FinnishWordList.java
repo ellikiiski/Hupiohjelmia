@@ -20,7 +20,7 @@ public class FinnishWordList {
         words = new ArrayList<>();
     }
     
-    public ArrayList<String> getLista() {
+    public ArrayList<String> getList() {
         this.parseXMLtoWordlist();
         return this.words;
     }
