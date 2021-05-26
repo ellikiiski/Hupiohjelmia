@@ -16,11 +16,15 @@ public class WordSearch {
 
         FinnishWordList words = new FinnishWordList("./files/kotus-sanalista.xml");
         ArrayList<String> wordList = words.getList();
-
-        System.out.println("KIRJOITA EHTO - piste=tyhjä");
-        String condition = scanner.nextLine();
         
-        findWords(condition, wordList);
+        while (true) {
+            System.out.println("KIRJOITA EHTO - piste=tyhjä");
+            String condition = scanner.nextLine();
+            if (condition.isEmpty()) {
+                break;
+            }
+            findWords(condition, wordList);
+        }
     }
     
     // ei takuulla tehokkain haku, mutta tekee työnsä
