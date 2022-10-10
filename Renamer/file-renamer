@@ -61,8 +61,7 @@ def rename (list, prefix):
         name = Path(f"{sm.folder}/{prefix}-{count+1}{sm.extention}")
         path = sm.path
         os.rename(path, name)
- 
-# Driver Code
+
 if __name__ == '__main__':
     list = list_files(Path("C:/Users/kiisk/Desktop/paska"))
     rename(list, "Bilbao-2014-2-Random")
