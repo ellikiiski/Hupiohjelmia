@@ -1,0 +1,68 @@
+
+import os
+from pathlib import Path
+
+class FileToBeRenamed:
+
+    def __init__(self, path) -> None:
+        self.__path = path
+        self.__folder = os.path.dirname(path)
+        self.__filename = os.path.basename(path)
+        self.__name = self.__filename.split(".")[0]
+        self.__extention = os.path.splitext(path)[-1]
+        self.__timestamp = os.path.getmtime(path)
+
+    def __lt__(self,other) -> bool:
+        return self.__timestamp < other.timestamp
+
+    def __str__(self) -> str:
+        return f"Snapchat Memory: {self.__name}, time: {self.__timestamp}"
+
+    @property
+    def path(self):
+        return self.__path
+
+    @property
+    def folder(self):
+        return self.__folder
+
+    @property
+    def filename(self):
+        return self.__filename
+
+    @property
+    def name(self):
+        return self.__name
+
+    @property
+    def extention(self):
+        return self.__extention
+
+    @property
+    def timestamp(self):
+        return self.__timestamp
+
+def list_files(folder):
+    file_list = []
+    for filename in os.listdir(folder):
+        path = Path(f"{folder}/{filename}")
+        file = FileToBeRenamed(path)
+        file_list.append(file)
+    return file_list
+
+def chronologize(folder):
+    file_list = list_files(folder)
+    file_list.sort()
+    return file_list
+
+def rename (list, prefix):
+    file_list = list
+    for count, sm in enumerate(file_list):
+        name = Path(f"{sm.folder}/{prefix}-{count+1}{sm.extention}")
+        path = sm.path
+        os.rename(path, name)
+ 
+# Driver Code
+if __name__ == '__main__':
+    list = list_files(Path("C:/Users/kiisk/Desktop/paska"))
+    rename(list, "Bilbao-2014-2-Random")
